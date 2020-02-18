@@ -1,0 +1,14 @@
+SMAP
+tempjsp_jsp.java
+JSP
+*S JSP
+*F
++ 0 tempjsp.jsp
+tempjsp.jsp
+*L
+1,4:53
+5,8:11
+12,8:56
+20:64,3
+21,2:67
+*E

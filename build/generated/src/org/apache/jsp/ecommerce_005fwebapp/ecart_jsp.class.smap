@@ -1,0 +1,16 @@
+SMAP
+ecart_jsp.java
+JSP
+*S JSP
+*F
++ 0 ecart.jsp
+ecommerce_webapp/ecart.jsp
+*L
+1,37:48
+38,2:12
+39,2:85
+41,3:88
+43,35:91
+78:126,3
+79,141:129
+*E

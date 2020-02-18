@@ -1,0 +1,18 @@
+SMAP
+temprature_005fconversion_jsp.java
+JSP
+*S JSP
+*F
++ 0 temprature_conversion.jsp
+temprature_conversion.jsp
+*L
+1,36:47
+37,2:11
+38,53:83
+91,29:137
+119,16:166
+135:182,3
+136,5:185
+141,2:191
+142,48:193
+*E
