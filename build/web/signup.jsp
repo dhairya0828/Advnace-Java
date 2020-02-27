@@ -1,12 +1,10 @@
-<%@page import="ecommerce_products.Product"%>
-<%@page import ="java.util.*" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Your Cart</title>
+        <title>Sign Up</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -68,7 +66,7 @@
                                     <div class="main-menu  d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <b><li><a class="active" style="color: black;" href="ecart.jsp"><h3>Home</h3></a></li></b>
+                                                <b><li><a class="active" style="color: black;" href="home.html"><h3>Home</h3></a></li></b>
                                             </ul>
                                         </nav>
                                     </div>
@@ -86,58 +84,49 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="bradcam_text text-center">
-                            <table border="4px solid green" width="40%" align="center" cellpadding="20%" cellspacing="30%" style="border-radius: 1em;">
-                                <%
-                                    HashMap<String, Product> products = null;
-                                    HashMap<String, Integer> userCart = null;
-                                    if (session.getAttribute("cartItems") != null) {
-                                        userCart = (HashMap<String, Integer>) session.getAttribute("cartItems");
-                                        if (!userCart.isEmpty()) {
-                                            // Forming Table to Display Cart 
-                                            out.println("<tr align ='center'>");
-                                            out.println("<th style='background-color:green;'>Sr. No</th>");
-                                            out.println("<th style='background-color:green;'>Product</th>");
-                                            out.println("<th style='background-color:green;'>Price</th>");
-                                            out.println("<th style='background-color:green;'>Quantity</th>");
-                                            out.println("<th style='background-color:green;'>Total</th>");
-                                            out.println("<th style='background-color:green;'>Remove</th>");
-                                            out.println("</tr>");
-
-                                            products = (HashMap<String, Product>) application.getAttribute("products");
-                                            Set<String> keySet = userCart.keySet();
-
-                                            int srNo = 1;
-                                            double price = 0.0;
-                                            double totalAmount = 0.0;
-                                            for (String id : keySet) {
-
-                                                out.println("<tr align='center'>");
-                                                out.println("<td>" + srNo++ + "</td>");
-                                                out.println("<td>" + products.get(id).getName() + "</td>");
-
-                                                price = products.get(id).getPrice();
-                                                out.println("<td>" + price + "</td>");
-                                                out.println("<td>" + userCart.get(id) + "</td>");
-                                                price *= (userCart.get(id)); // Multiplying Quantity with Price 
-                                                totalAmount += price;
-                                                out.println("<td>" + price + "</td>"); // Total
-                                                out.println("<td><a href='removeitem.jsp?id=" +  id + "'><i>Remove</i></a></td>");
-                                                out.println("</tr>");
-                                            }                                            
-                                            session.setAttribute("totalAmount", totalAmount);
-                                            out.println("</table>");
-                                            out.println("<div style = 'margin-top: 25px;'>");
-                                            out.println("<a href = 'checkout.jsp'><button style='border-radius:40px;background-color:green;' class='boxed-btn3'>Check Out</button></a>");
-                                            out.println("</div>");
-                                        } 
-                                        else {
-                                            out.println("<h3 style='margin-bottom:30%;color: darkred;'>Your Cart IS Empty !</h3>");
-                                        }
-                                    } 
-                                    else {
-                                        out.println("<h3 style='margin-bottom:30%;color: darkred;'>Your Cart IS Empty !</h3>");
-                                    }
-                                %>
+                            <div class="col-lg-8 col-md-8" style="margin-left: 230px">
+                                <h4 class="mb-30">Sign Up for E -commerce</h4>
+                                <form action="processuser.jsp">
+                                    <!--div class="mt-10" >
+                                        <input type="text" name="fullName" placeholder="Full Name"
+                                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" required
+                                               class="single-input">
+                                    </div-->
+                                    <div class="mt-10">
+                                        <input type="text" name="userName" placeholder="User Name"
+                                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'User Name'" required
+                                               class="single-input">
+                                    </div>
+                                    <div class="mt-10">
+                                        <input type="password" name="pwd" placeholder="Password"
+                                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required
+                                               class="single-input">
+                                    </div>
+                                    <div class="mt-10">
+                                        <input type="password" name="confirmPwd" placeholder="Confirm Password"
+                                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirm Password'" required
+                                               class="single-input">
+                                    </div>
+                                    <div class="mt-10">
+                                        <input type="email" name="email" placeholder="Email address"
+                                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required
+                                               class="single-input">
+                                    </div>
+                                    <div class="mt-10">
+                                        <input type="text" name="phNum" placeholder="Phone Number"
+                                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" required
+                                               class="single-input">
+                                    </div>
+                                    <div class="mt-10">
+                                        <textarea class="single-textarea" name="address" placeholder="Address" onfocus="this.placeholder = ''"
+                                                  onblur="this.placeholder = 'Address'" required rows="3"></textarea>
+                                    </div>
+                                    <div class="col-xl-11" style="margin-left: 125px;">
+                                        <button type="submit" class="boxed-btn3">Submit</button>
+                                        <button type="reset" class="boxed-btn3">Reset</button>
+                                    </div>
+                                </form>
+                            </div>     
                         </div>
                     </div>
                 </div>

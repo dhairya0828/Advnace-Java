@@ -98,7 +98,7 @@
                                     error += "Please Enter Password</br>";
                                 }
                                 if (error.isEmpty()) {
-                                    error += "Logec in Succefully";
+                                    error += "Loged in Succefully";
                                     response.sendRedirect("login.jsp?msg="+error);
                                 }
                                 out.println(error);

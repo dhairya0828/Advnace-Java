@@ -110,11 +110,15 @@
                                         <textarea style="border-radius:10px;background-color: activeborder;" class="single-textarea" name="address" placeholder="Address" onfocus="this.placeholder = ''"
                                                   onblur="this.placeholder = 'Address'" required rows="3"></textarea>
                                     </div>
+                                    <div class="mt-10">
+                                        <input style="border-radius:10px;background-color: activeborder;" type="text" name="phNum" value="Total Payable Amount <%=session.getAttribute("totalAmount")%> INR only"                                                
+                                               class="single-input">
+                                    </div>
                                     <div class="input-group-icon mt-10">
                                         <div class="form-select" id="default-select">
                                             <select  name="paymentMethod">
-                                                <option readonly = "readonly" selected="selected">PAYMENT</option>
-                                                <option value="1" >COD</option>
+                                                <option readonly = "readonly" >PAYMENT</option>
+                                                <option value="1" selected="selected" >COD</option>
                                                 <option value="2" disabled="disabled" >Paytm</option>
                                                 <option value="3" disabled="disabled" >Credit Card</option>
                                                 <option value="4" disabled="disabled" >UPI</option>

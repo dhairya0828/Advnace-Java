@@ -99,9 +99,14 @@
 				                        </div>
                                         <br/>
                                         <div class="col-xl-11" style="margin-left: 125px;">
-                                            <button type="submit" name="submitted" value="1" class="boxed-btn3">Submit</button>
+                                            <button style="border-radius:40px;" type="submit" name="submitted" value="1" class="boxed-btn3">Login</button>
                                         </div>
-                                    </form>
+                                </form>
+                                <form action="signup.jsp" method="post">
+                                    <div class="col-xl-11" style="margin-left: 125px;">
+                                      <button style="border-radius:40px;" type="submit" name="submitted" value="1" class="boxed-btn3">SignUp</button>
+                                    </div>
+                                </form>
                             </div>
                             <%
                                 String msg = request.getParameter("msg");
